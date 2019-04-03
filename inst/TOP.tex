@@ -245,7 +245,7 @@ The package can be loaded with the following command:
 \begin{Highlighting}[]
 \CommentTok{# install.packages("devtools")}
 \KeywordTok{library}\NormalTok{(devtools)  }
-\CommentTok{#install_github("andrewhaoyu/TOP")}
+\CommentTok{#install_github("andrewhaoyu/TESTVERSION_TOP")}
 \KeywordTok{library}\NormalTok{(TOP)}
 \end{Highlighting}
 \end{Shaded}
@@ -679,7 +679,6 @@ the mixed effect two-stage model.
 \CommentTok{#the second element is the information matrix}
 \NormalTok{score.fixed <-}\StringTok{ }\NormalTok{score.test.fixed[[}\DecValTok{1}\NormalTok{]]}
 \NormalTok{infor.fixed <-}\StringTok{ }\NormalTok{score.test.fixed[[}\DecValTok{2}\NormalTok{]]}
-
 \CommentTok{#fit the two-stage model under the null hypothesis}
 \CommentTok{#that only the random effect is 0}
 \CommentTok{#the model will have two covariates, }
@@ -701,7 +700,6 @@ the mixed effect two-stage model.
 \CommentTok{#Generate the z design matrix for random effect}
 \CommentTok{#PR, HER2 and grade is random effect}
 \NormalTok{z.design.random <-}\StringTok{ }\NormalTok{z.standard[,}\DecValTok{2}\OperatorTok{:}\DecValTok{4}\NormalTok{]}
-
 \CommentTok{#compute the score and information matrix for random effect}
 \NormalTok{score.test.random <-}\StringTok{ }\KeywordTok{ScoreTestMixedModel}\NormalTok{(}\DataTypeTok{y=}\NormalTok{y,}
                                          \DataTypeTok{x=}\NormalTok{SNP,}
@@ -712,7 +710,6 @@ the mixed effect two-stage model.
 \CommentTok{#the second element is the information matrix}
 \NormalTok{score.random <-}\StringTok{ }\NormalTok{score.test.random[[}\DecValTok{1}\NormalTok{]]}
 \NormalTok{infor.random <-}\StringTok{ }\NormalTok{score.test.random[[}\DecValTok{2}\NormalTok{]]}
-
 \CommentTok{#after we get the the fixed effect score, infor }
 \CommentTok{#and random effect score, infor, }
 \CommentTok{#we can combine them through the following function. }
@@ -724,19 +721,16 @@ the mixed effect two-stage model.
 \CommentTok{#that the variance of random effect is 0}
 \CommentTok{#Under this situation, the second p value is NOT }
 \CommentTok{#the global heterogeneity test p value since ER is fixed}
-\NormalTok{p.value.mtop <-}\StringTok{ }\KeywordTok{DisplayMixedScoreTestResult}\NormalTok{(}
-\NormalTok{  score.fixed,}
-\NormalTok{  infor.fixed,}
-\NormalTok{  score.random,}
-\NormalTok{  infor.random}
-\NormalTok{)  }
-\KeywordTok{print}\NormalTok{(p.value.mtop)}
+\CommentTok{#DisplayMixedScoreTestResult function can't be used in TESTVERSION_TOP}
+\CommentTok{# p.value.mtop <- DisplayMixedScoreTestResult(}
+\CommentTok{#   score.fixed,}
+\CommentTok{#   infor.fixed,}
+\CommentTok{#   score.random,}
+\CommentTok{#   infor.random}
+\CommentTok{# )  }
+\CommentTok{# print(p.value.mtop)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## [1] 0.09988269 0.14110520
-\end{verbatim}
 
 The second p.value of p.value.mtop is for null hypothesis that the
 random effect is 0. Under this particular situation, the second p.value
@@ -834,19 +828,16 @@ two-stage model.
 \CommentTok{#both the fixed effect and the variance of the random effects are 0}
 \CommentTok{#under this case, the first p-value is for the global heterogeneity test.}
 \CommentTok{#the second p.value don't have a good interpretation under this case}
-\NormalTok{p.value.mtop <-}\StringTok{ }\KeywordTok{DisplayMixedScoreTestResult}\NormalTok{(}
-\NormalTok{  score.fixed,}
-\NormalTok{  infor.fixed,}
-\NormalTok{  score.random,}
-\NormalTok{  infor.random}
-\NormalTok{)  }
-\KeywordTok{print}\NormalTok{(p.value.mtop)}
+\CommentTok{#DisplayMixedScoreTestResult function can't be used in TESTVERSION_TOP}
+\CommentTok{# p.value.mtop <- DisplayMixedScoreTestResult(}
+\CommentTok{#   score.fixed,}
+\CommentTok{#   infor.fixed,}
+\CommentTok{#   score.random,}
+\CommentTok{#   infor.random}
+\CommentTok{# )  }
+\CommentTok{# print(p.value.mtop)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## [1] 0.2700321 0.1411052
-\end{verbatim}
 
 \section{References}\label{references}
 

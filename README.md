@@ -4,7 +4,7 @@ Two-stage polytomous logistic regression (TOP): in this package, we developed a 
 
 Usage
 =======
-[The 'TOP' vignette](https://github.com/andrewhaoyu/TOP/blob/master/inst/TOP.pdf) will provide a good start point for using TOP package.
+[The 'TOP' vignette](https://github.com/andrewhaoyu/TESTVERSION_TOP/blob/master/inst/TOP.pdf) will provide a good start point for using TOP package.
 
 
 Development 
@@ -17,7 +17,7 @@ To install the development version of TOP, it's easiest to use the 'devtools' pa
 
 install.packages("devtools")  
 library(devtools)  
-install_github("andrewhaoyu/TOP")
+install_github("andrewhaoyu/TESTVERSION_TOP")
 
 References
 =======
